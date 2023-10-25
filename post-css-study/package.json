@@ -1,0 +1,21 @@
+{
+  "name": "post-css",
+  "scripts": {
+    "all": "npm-run-all --parallel postcss sass",
+    "all:dev": "npm-run-all --parallel postcss:dev sass:dev",
+    "postcss": "postcss css_raw/**/*.css --base css_raw --dir css --config postcss.config.js --env production",
+    "postcss:dev": "postcss css_raw/**/*.css --base css_raw --dir css --config postcss.config.js --env development --watch",
+    "sass": "sass scss/:css_raw/ --no-source-map",
+    "sass:dev": "sass scss/:css_raw/ --source-map-urls=relative --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "css-declaration-sorter": "^6.3.1",
+    "cssnano": "^5.1.14",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.16",
+    "postcss-cli": "^10.0.0",
+    "postcss-media-minmax": "^5.0.0",
+    "sass": "^1.57.1"
+  }
+}

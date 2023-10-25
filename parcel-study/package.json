@@ -1,0 +1,21 @@
+{
+  "name": "parcel-study",
+  "version": "1.0.0",
+  "scripts": {
+    "watch": "rm -rf watch .parcel-cache && parcel watch src/index.html --dist-dir watch/ --no-cache",
+    "build": "rm -rf build .parcel-cache && parcel build src/index.html --dist-dir public/ --no-cache --no-source-maps"
+  },
+  "parcel-namer-rewrite": {
+    "chain": "@parcel/namer-default",
+    "hashing": "always",
+    "disable": false,
+    "rules": {
+      "(.*).js": "$1_version_{hash}.js"
+    }
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.0",
+    "parcel-namer-rewrite": "^2.0.0-rc.3"
+  }
+}

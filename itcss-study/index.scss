@@ -1,0 +1,5 @@
+@use "include/mixins" as *;
+
+@include media(md) {
+  @include grid(md, 10);
+}

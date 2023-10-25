@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "sass": "sass scss/:css/ --no-source-map --watch",
+    "sass:dev": "sass scss/:css/ --source-map-urls=relative --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.54.8"
+  }
+}

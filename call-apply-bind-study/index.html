@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>callとapplyとbind</title>
+</head>
+<body>
+  <script>
+    function show(arg) {
+      console.log(arg);
+    }
+    const objectUnrelatedToFunction = {
+      name: 'bob',
+      partner: 'alice',
+      getName: function() {
+        console.log(this.name);
+      },
+      getPartner: function() {
+        console.log(this.partner);
+      }
+    }
+    const obj = {
+      id: 100,
+      getThis: function(arg) {
+        console.log(`run in ${arg}`);
+        console.dir(this);
+      },
+      getId: function(arg) {
+        console.log(`run in ${arg} : ${this.id}`);
+      }
+    }
+    function argToArrayPrototype() {
+      return Array.prototype.slice.call(arguments);
+    }
+    function argToArrayLiteral() {
+      return [].slice.call(arguments);
+    }
+
+    function _____() {
+      console.log(
+        "%c======================================================================",
+        "color: #0f54ff; font-weight: bold;"
+      );
+    }
+
+    show.call(null, 'call!');
+    show.apply(null, ['apply!']);
+    show.bind(null, 'bind!')();
+    _____();
+
+    show.call({}, 'call!');
+    show.apply({}, ['apply!']);
+    show.bind({}, 'bind!')();
+    _____();
+
+    show.call(objectUnrelatedToFunction, 'call!');
+    show.apply(objectUnrelatedToFunction, ['apply!']);
+    show.bind(objectUnrelatedToFunction, 'bind!')();
+    _____();
+
+    obj.getThis('obj');
+    obj.getThis.call(obj, 'call');
+    obj.getThis.apply(obj, ['apply']);
+    obj.getThis.bind(obj, 'bind')();
+    _____();
+
+    obj.getId('obj');
+    obj.getId.call(obj, 'call');
+    obj.getId.apply(obj, ['apply']);
+    obj.getId.bind(obj, 'bind')();
+    _____();
+
+    show(argToArrayPrototype('one', 'two', 'three', 'four', 'five'));
+    show(argToArrayLiteral('one', 'two', 'three', 'four', 'five'));
+  </script>
+</body>
+</html>

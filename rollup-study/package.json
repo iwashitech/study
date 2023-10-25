@@ -1,0 +1,15 @@
+{
+  "name": "rollup-study",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "iife": "rollup src/js/app.js --file public/js/bundle_iife.js --format iife",
+    "esm": "rollup src/js/app.js --file public/js/bundle_esm.js --format esm"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^4.1.4"
+  }
+}

@@ -1,0 +1,7 @@
+// @use "sass:math";
+
+// pxからremへ変換
+@function rem($px, $baseFont: 10, $ratio: 2) {
+  // @return math.div(math.div($px, $baseFont), $ratio) + rem;
+  @return calc($px / $baseFont / $ratio) + rem;
+}

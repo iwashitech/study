@@ -1,0 +1,14 @@
+version: '3'
+services:
+  dejiara:
+    container_name: dacorp
+    build:
+      context: "."
+      dockerfile: "Dockerfile"
+    volumes:
+      - /c/Users/user_name/www.example.co.jp:/var/www/html
+    ports:
+      - 8089:80
+    tty: true
+    privileged: true
+    command: /sbin/init

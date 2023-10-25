@@ -1,0 +1,10 @@
+Host foofoo
+  HostName localhost
+  User root
+  IdentityFile foo/id_rsa
+  Port 20022
+Host barbar
+  HostName localhost
+  User root
+  IdentityFile bar/id_rsa
+  Port 20022

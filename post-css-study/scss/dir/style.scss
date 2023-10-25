@@ -1,0 +1,37 @@
+@use "../_util/util" as *;
+
+// スタイル
+.dir {
+  &-in {
+    font-size: rem(60);
+  }
+}
+
+[class*="block-"] {
+  width: rem(100);
+}
+
+$block-color: (
+  'block-a': #0ff,
+  'block-b': #f0f,
+  'block-c': #ff0,
+  'block-d': #000,
+  'block-e': #fff
+);
+
+@each $block, $color in $block-color {
+  .#{$block}-bg {
+    background-color: rgba($color, 0.5);
+  }
+}
+
+@media screen and (width > 500px) and (width <= 1200px) {
+  .bar {
+    display: grid;
+    background-color: rgba(#f0f, 0.2);
+    & .foo {
+      margin-bottom: 10px;
+      padding-top: 0;
+    }
+  }
+}

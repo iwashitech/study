@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <input type="text">
+
+    <input type="submit" value="送信する">
+  </form>
+
+  <script>
+    const debounce = function(fn, delay) {
+      let timeoutId;
+      return function() {
+        const args = [].slice.call(arguments);
+        // cancel the previous timer
+        if (timeoutId) { clearTimeout(timeoutId); }
+
+        // setup a new timer
+        timeoutId = setTimeout(function() {
+          fn.apply(null, args)
+        }, delay);
+      };
+    };
+
+    document.querySelector('form').addEventListener('input', function (e) {
+      console.log(`/********** e`);
+      console.log(e);
+      console.log(`/********** e.target`);
+      console.log(e.target);
+      console.log(`/********** e.data`);
+      console.log(e.data);
+    });
+  </script>
+</body>
+</html>

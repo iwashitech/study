@@ -1,0 +1,21 @@
+@use "../_util/util" as util;
+
+// スタイル
+.dir {
+  &-in {
+    font-size: util.rem(123);
+  }
+}
+$page-color: (
+  'pageA': #0ff,
+  'pageB': #f0f,
+  'pageC': #ff0,
+  'pageD': #000,
+  'pageE': #fff
+);
+
+@each $page, $color in $page-color {
+  .#{$page}-bg {
+    background-color: rgba($color, 0.5);
+  }
+}

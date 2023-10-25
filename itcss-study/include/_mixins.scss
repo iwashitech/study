@@ -1,0 +1,13 @@
+@forward "breakpoints";
+
+/**
+* レスポンシブカラム
+*/
+@mixin grid($breakpoint, $cols: 12) {
+  @for $i from 1 to $cols {
+    .c-#{$breakpoint}-#{$i}-#{$cols} {
+      max-width: #{'calc('$i '/' $cols '* 100%)'};
+      flex-basis: calc($i / $cols * 100%);
+    }
+  }
+}
