@@ -1,0 +1,1 @@
+mkdir -p data/db data/plugins data/themes
