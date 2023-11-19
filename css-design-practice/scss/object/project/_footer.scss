@@ -1,0 +1,20 @@
+@use "../../global/global" as *;
+@forward "../../foundation/settings";
+
+.p-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__ttl {
+    font-size: rem(20);
+    font-weight: bold;
+  }
+  &__hd {
+    font-size: rem(14);
+  }
+  &__txt {
+    margin-top: rem(10);
+    font-size: rem(14);
+    text-align: center;
+  }
+}

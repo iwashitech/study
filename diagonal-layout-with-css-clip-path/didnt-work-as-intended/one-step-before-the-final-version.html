@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSSのclip-pathで斜めレイアウト</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css">
+  <style>
+    html {
+      font-size: 10px;
+    }
+    :root {
+      --size-position-top: 0.7;
+      --size-position-left: 0.68;
+      --size-img: 80;
+    }
+    .container {
+      position: relative;
+    }
+    .bg-color {
+      background: linear-gradient(180deg,#ff923e 0%,#ff923e calc(var(--size-position-top) * 100%),#fff calc(var(--size-position-top) * 100%),#fff 100%);
+    }
+    .media {
+      display:grid;
+      grid-template-columns: 1fr 2fr;
+    }
+    .media__img img {
+      width: 100%;
+      clip-path: polygon(0 0, 100% 0, calc(var(--size-position-left) * 100%) 100%, 0 100%);
+    }
+    .meida__txt {
+      font-size: 1.6rem;
+    }
+    .main {
+      position: absolute;
+      top: calc(var(--size-position-top) * 100%);
+      display:grid;
+      grid-template-columns: 1fr 2fr;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.5);
+      font-size: 1.6rem;
+    }
+    .main__txt {
+      transform: translateX(calc((calc(var(--size-position-left)) + calc(1 - var(--size-position-left)) * calc(1 - var(--size-position-top))) * 100%));
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="media">
+      <p class="media__img bg-color"><img src="https://picsum.photos/id/237/800/800"></p>
+      <p class="meida__txt bg-color">Lorem ipsum dolor sit amet consectetur adipisicing elit. At error ipsum autem enim sequi, quos tempora unde, dignissimos velit, quis nulla? Mollitia dolorem ullam maiores debitis. Nobis aliquid rerum voluptas.</p>
+    </div><!-- /.media -->
+    <div class="main">
+      <div class="main__txt">あとはもうだまって出ているのでした。ところがその人はしばらく棚をさがしてから、さっき見たような音が川下の方から、すうっと霧がはれかかりました。いまでも聞こえるじゃありませんからな。くじらと同じようにじぶんで光っているのが見えました。はい白い太いずぼんをはいた学者らしい人が、少し水銀いろに浮いたようにおもいました。ただたくさんのくるみの木がたって、それからもう咽喉いっぱい泣きだしました。ちゃんと小さな水晶のお宮のけしきのように、こっちに向き直りました。だまってその譜を聞いているというように、眼の前が、ぱっと明るくなって、なにかなつかしそうにわらいながら、ジョバンニを見ていました。どうしたのか、もうどうしてそれをもとめたらいいでしょうああわたくしもそれを見つけたのでした。ジョバンニはばねのようにひかる雁が、ちょうどさっきのような声が、二人のうしろで聞こえました。</div>
+    </div>
+  </div><!-- /.container -->
+</body>
+</html>

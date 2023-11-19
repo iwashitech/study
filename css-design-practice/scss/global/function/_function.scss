@@ -1,0 +1,6 @@
+// pxからremへ変換
+@function rem($px, $ratio: 2) {
+  $baseFont: 10;
+  // $ratio: 2;
+  @return calc($px / $baseFont / $ratio) + rem;
+}

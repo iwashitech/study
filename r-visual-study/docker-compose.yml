@@ -1,0 +1,13 @@
+version: '3'
+services:
+  park:
+    env_file: .env
+    container_name: yuki
+    build:
+      context: .
+    ports:
+      - 8787:8787
+    volumes:
+      - /c/Users/$USER_NAME/docker_data/r_visual:/var/www/html
+    restart: always
+    tty: true

@@ -1,0 +1,6 @@
+@use "../../../global/global" as *;
+
+.pages-foo-bar {
+  margin-top: rem(25);
+  color: $variable;
+}

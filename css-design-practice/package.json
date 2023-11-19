@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "sass": "npm run sass:dev",
+    "sass:dev": "sass scss/:css/ --source-map-urls=relative --watch",
+    "sass:dev-build": "sass scss/:css/ --source-map-urls=relative",
+    "sass:prod": "sass scss/:css/ --style=compressed --no-source-map && cd css && find . -type f -name '*.css.map' -delete",
+    "sass:prod-watch": "sass scss/:css/ --style=compressed --no-source-map --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.62.0"
+  }
+}
